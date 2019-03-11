@@ -26,7 +26,9 @@ public enum KrakenApiMethod {
     OPEN_POSITIONS("OpenPositions", true),
     LEDGERS_INFORMATION("Ledgers", true),
     QUERY_LEDGERS("QueryLedgers", true),
-    TRADE_VOLUME("TradeVolume", true);
+    TRADE_VOLUME("TradeVolume", true),
+    WITHDRAW_INFO("WithdrawInfo", true),
+    WITHDRAW_STATUS("WithdrawStatus", true);
 
     private String url;
     private boolean isPrivate;

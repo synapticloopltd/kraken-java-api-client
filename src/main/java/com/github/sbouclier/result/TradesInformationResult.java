@@ -21,6 +21,9 @@ public class TradesInformationResult extends Result<Map<String, TradesInformatio
         @JsonProperty("ordertxid")
         public String orderTransactionId;
 
+        @JsonProperty("postxid")
+        public String postxId;
+
         @JsonProperty("pair")
         public String assetPair;
 
@@ -51,6 +54,7 @@ public class TradesInformationResult extends Result<Map<String, TradesInformatio
         public String toString() {
             return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
                     .append("orderTransactionId", orderTransactionId)
+                    .append("postxId", postxId)
                     .append("assetPair", assetPair)
                     .append("tradeTimestamp", tradeTimestamp)
                     .append("orderDirection", orderDirection)

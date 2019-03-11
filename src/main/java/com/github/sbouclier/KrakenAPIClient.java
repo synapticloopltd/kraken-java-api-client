@@ -361,7 +361,24 @@ public class KrakenAPIClient {
      */
     public TradesHistoryResult getTradesHistory() throws KrakenApiException {
         HttpApiClient<TradesHistoryResult> client = (HttpApiClient<TradesHistoryResult>) this.clientFactory.getHttpApiClient(apiKey, apiSecret, KrakenApiMethod.TRADES_HISTORY);
+
         return client.callPrivate(BASE_URL, KrakenApiMethod.TRADES_HISTORY, TradesHistoryResult.class);
+    }
+
+    /**
+     * Get trades history
+     *
+     * @return trades history
+     * @throws KrakenApiException
+     */
+    public TradesHistoryResult getTradesHistory(int offset, String start) throws KrakenApiException {
+        HttpApiClient<TradesHistoryResult> client = (HttpApiClient<TradesHistoryResult>) this.clientFactory.getHttpApiClient(apiKey, apiSecret, KrakenApiMethod.TRADES_HISTORY);
+
+        Map<String, String> params = new HashMap<>();
+        params.put("ofs", String.valueOf(offset));
+        params.put("start", start);
+
+        return client.callPrivate(BASE_URL, KrakenApiMethod.TRADES_HISTORY, TradesHistoryResult.class, params);
     }
 
     /**
@@ -408,6 +425,39 @@ public class KrakenAPIClient {
     }
 
     /**
+     * Get ledgers information
+     *
+     * @return ledgers information
+     * @throws KrakenApiException
+     */
+    public LedgersInformationResult getLedgersInformation(int offset, String start) throws KrakenApiException {
+        HttpApiClient<LedgersInformationResult> client = (HttpApiClient<LedgersInformationResult>) this.clientFactory.getHttpApiClient(apiKey, apiSecret, KrakenApiMethod.LEDGERS_INFORMATION);
+
+        Map<String, String> params = new HashMap<>();
+        params.put("ofs", String.valueOf(offset));
+        params.put("start", start);
+
+        return client.callPrivate(BASE_URL, KrakenApiMethod.LEDGERS_INFORMATION, LedgersInformationResult.class, params);
+    }
+
+    /**
+     * Get ledgers information
+     *
+     * @return ledgers information
+     * @throws KrakenApiException
+     */
+    public LedgersInformationResult getLedgersInformation(List<String> asset, int offset, String start) throws KrakenApiException {
+        HttpApiClient<LedgersInformationResult> client = (HttpApiClient<LedgersInformationResult>) this.clientFactory.getHttpApiClient(apiKey, apiSecret, KrakenApiMethod.LEDGERS_INFORMATION);
+
+        Map<String, String> params = new HashMap<>();
+        params.put("asset", String.join(",", asset));
+        params.put("ofs", String.valueOf(offset));
+        params.put("start", start);
+
+        return client.callPrivate(BASE_URL, KrakenApiMethod.LEDGERS_INFORMATION, LedgersInformationResult.class, params);
+    }
+
+    /**
      * Get ledgers
      *
      * @param ledgerIds list of ledger ids
@@ -432,5 +482,37 @@ public class KrakenAPIClient {
     public TradeVolumeResult getTradeVolume() throws KrakenApiException {
         HttpApiClient<TradeVolumeResult> client = (HttpApiClient<TradeVolumeResult>) this.clientFactory.getHttpApiClient(apiKey, apiSecret, KrakenApiMethod.TRADE_VOLUME);
         return client.callPrivate(BASE_URL, KrakenApiMethod.TRADE_VOLUME, TradeVolumeResult.class);
+    }
+
+    /**
+     * Get withdraw info
+     *
+     * @return withdraw info
+     * @throws KrakenApiException
+     */
+    public WithdrawInfoResult getWithdrawInfo(String asset, String key, String amount) throws KrakenApiException {
+        HttpApiClient<WithdrawInfoResult> client = (HttpApiClient<WithdrawInfoResult>) this.clientFactory.getHttpApiClient(apiKey, apiSecret, KrakenApiMethod.WITHDRAW_INFO);
+
+        Map<String, String> params = new HashMap<>();
+        params.put("asset", asset);
+        params.put("key", key);
+        params.put("amount", amount);
+
+        return client.callPrivate(BASE_URL, KrakenApiMethod.WITHDRAW_INFO, WithdrawInfoResult.class, params);
+    }
+
+    /**
+     * Get withdraw status
+     *
+     * @return withdraw status
+     * @throws KrakenApiException
+     */
+    public WithdrawStatusResult getWithdrawStatus(String asset) throws KrakenApiException {
+        HttpApiClient<WithdrawStatusResult> client = (HttpApiClient<WithdrawStatusResult>) this.clientFactory.getHttpApiClient(apiKey, apiSecret, KrakenApiMethod.WITHDRAW_STATUS);
+
+        Map<String, String> params = new HashMap<>();
+        params.put("asset", asset);
+
+        return client.callPrivate(BASE_URL, KrakenApiMethod.WITHDRAW_STATUS, WithdrawStatusResult.class, params);
     }
 }
