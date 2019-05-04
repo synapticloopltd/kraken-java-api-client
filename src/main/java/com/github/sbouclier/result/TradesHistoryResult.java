@@ -32,7 +32,6 @@ public class TradesHistoryResult extends Result<TradesHistoryResult.TradesHistor
         }
     }
 
-    // TODO extract to TradeInformation
     public static class TradeHistory {
 
         @JsonProperty("ordertxid")
