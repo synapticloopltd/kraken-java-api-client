@@ -60,6 +60,8 @@ public class HttpApiClientFactory {
                 return new HttpApiClient<WithdrawInfoResult>(apiKey, apiSecret);
             case WITHDRAW_STATUS:
                 return new HttpApiClient<WithdrawStatusResult>(apiKey, apiSecret);
+            case ADD_STANDARD_ORDER:
+                return new HttpApiClient<AddStandardOrderResult>(apiKey, apiSecret);
             default:
                 throw new IllegalArgumentException("Unknown Kraken API method");
         }

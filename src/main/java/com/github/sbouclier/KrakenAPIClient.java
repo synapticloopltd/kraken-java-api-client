@@ -3,7 +3,10 @@ package com.github.sbouclier;
 import com.github.sbouclier.input.InfoInput;
 import com.github.sbouclier.input.Interval;
 import com.github.sbouclier.result.*;
+import com.github.sbouclier.result.common.OrderDirection;
+import com.github.sbouclier.result.common.OrderType;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -514,5 +517,17 @@ public class KrakenAPIClient {
         params.put("asset", asset);
 
         return client.callPrivate(BASE_URL, KrakenApiMethod.WITHDRAW_STATUS, WithdrawStatusResult.class, params);
+    }
+
+    public AddStandardOrderResult addStandardOrder(String pair, OrderType type, OrderDirection direction, BigDecimal volume) throws KrakenApiException {
+        HttpApiClient<AddStandardOrderResult> client = (HttpApiClient<AddStandardOrderResult>) this.clientFactory.getHttpApiClient(apiKey, apiSecret, KrakenApiMethod.ADD_STANDARD_ORDER);
+
+        Map<String, String> params = new HashMap<>();
+        params.put("pair", pair);
+        params.put("ordertype", type.getValue());
+        params.put("type", direction.getValue());
+        params.put("volume", volume.toString());
+
+        return client.callPrivate(BASE_URL, KrakenApiMethod.ADD_STANDARD_ORDER, AddStandardOrderResult.class, params);
     }
 }

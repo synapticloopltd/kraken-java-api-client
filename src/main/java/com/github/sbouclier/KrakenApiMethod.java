@@ -28,7 +28,8 @@ public enum KrakenApiMethod {
     QUERY_LEDGERS("QueryLedgers", true),
     TRADE_VOLUME("TradeVolume", true),
     WITHDRAW_INFO("WithdrawInfo", true),
-    WITHDRAW_STATUS("WithdrawStatus", true);
+    WITHDRAW_STATUS("WithdrawStatus", true),
+    ADD_STANDARD_ORDER("AddOrder", true);
 
     private String url;
     private boolean isPrivate;
