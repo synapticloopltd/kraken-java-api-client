@@ -68,6 +68,9 @@ public class AssetPairsResult extends Result<Map<String, AssetPairsResult.AssetP
         @JsonProperty("altname")
         public String alternatePairName;
 
+        @JsonProperty("wsname")
+        public String wsPairName;
+
         @JsonProperty("aclass_base")
         public String baseAssetClass;
 
@@ -118,6 +121,7 @@ public class AssetPairsResult extends Result<Map<String, AssetPairsResult.AssetP
         public String toString() {
             return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
                     .append("alternatePairName", alternatePairName)
+                    .append("wsPairName", wsPairName)
                     .append("baseAssetClass", baseAssetClass)
                     .append("baseAssetId", baseAssetId)
                     .append("quoteAssetClass", quoteAssetClass)

@@ -53,39 +53,8 @@ public class ClosedOrdersResult extends Result<ClosedOrdersResult.ClosedOrders> 
             }
         }
 
-        public static class Description {
-
-            @JsonProperty("pair")
-            public String assetPair;
-
-            @JsonProperty("type")
-            public OrderDirection orderDirection;
-
-            @JsonProperty("ordertype")
-            public OrderType orderType;
-
-            public BigDecimal price;
-
-            @JsonProperty("price2")
-            public BigDecimal secondaryPrice;
-
-            public String leverage;
-
-            public String order;
-
-            @Override
-            public String toString() {
-                return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
-                        .append("assetPair", assetPair)
-                        .append("orderDirection", orderDirection)
-                        .append("orderType", orderType)
-                        .append("price", price)
-                        .append("secondaryPrice", secondaryPrice)
-                        .append("leverage", leverage)
-                        .append("order", order)
-                        .toString();
-            }
-        }
+        @JsonProperty("limitprice")
+        public BigDecimal limitPrice;
 
         @JsonProperty("refid")
         public String referralOrderTransactionId;
@@ -122,6 +91,43 @@ public class ClosedOrdersResult extends Result<ClosedOrdersResult.ClosedOrders> 
 
         @JsonProperty("stopprice")
         public BigDecimal stopPrice;
+
+        public static class Description {
+
+            @JsonProperty("pair")
+            public String assetPair;
+
+            @JsonProperty("type")
+            public OrderDirection orderDirection;
+
+            @JsonProperty("ordertype")
+            public OrderType orderType;
+
+            public BigDecimal price;
+
+            @JsonProperty("price2")
+            public BigDecimal secondaryPrice;
+
+            public String leverage;
+
+            public String order;
+
+            public String close;
+
+            @Override
+            public String toString() {
+                return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
+                        .append("assetPair", assetPair)
+                        .append("orderDirection", orderDirection)
+                        .append("orderType", orderType)
+                        .append("price", price)
+                        .append("secondaryPrice", secondaryPrice)
+                        .append("leverage", leverage)
+                        .append("order", order)
+                        .append("close", close)
+                        .toString();
+            }
+        }
 
         @JsonProperty("misc")
         public String miscellaneous;

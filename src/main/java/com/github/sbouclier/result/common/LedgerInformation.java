@@ -32,6 +32,8 @@ public class LedgerInformation {
 
     public BigDecimal balance;
 
+    public String ledgerId;
+
     @Override
     public String toString() {
         return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
@@ -43,6 +45,7 @@ public class LedgerInformation {
                 .append("amount", amount)
                 .append("fee", fee)
                 .append("balance", balance)
+                .append("ledgerId", ledgerId)
                 .toString();
     }
 }

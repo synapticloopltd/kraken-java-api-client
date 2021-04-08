@@ -32,17 +32,19 @@ public class TradesHistoryResult extends Result<TradesHistoryResult.TradesHistor
         }
     }
 
-    // TODO extract to TradeInformation
     public static class TradeHistory {
 
         @JsonProperty("ordertxid")
         public String orderTransactionId;
 
+        @JsonProperty("postxid")
+        public String postxId;
+
         @JsonProperty("pair")
         public String assetPair;
 
         @JsonProperty("time")
-        public Long tradeTimestamp;
+        public String tradeTimestamp;
 
         @JsonProperty("type")
         public OrderDirection orderDirection;
@@ -64,10 +66,13 @@ public class TradesHistoryResult extends Result<TradesHistoryResult.TradesHistor
         @JsonProperty("misc")
         public String miscellaneous;
 
+        public String tradeId;
+
         @Override
         public String toString() {
             return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
                     .append("orderTransactionId", orderTransactionId)
+                    .append("postxId", postxId)
                     .append("assetPair", assetPair)
                     .append("tradeTimestamp", tradeTimestamp)
                     .append("orderDirection", orderDirection)
