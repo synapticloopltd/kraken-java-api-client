@@ -16,27 +16,27 @@ import java.util.Map;
  */
 public class RecentTradeResult extends ResultWithLastId<Map<String, List<RecentTradeResult.RecentTrade>>> {
 
-    @JsonFormat(shape = JsonFormat.Shape.ARRAY)
-    @JsonPropertyOrder({"price", "volume", "time", "buySell", "marketLimit", "miscellaneous"})
-    public static class RecentTrade {
-        public BigDecimal price;
-        public BigDecimal volume;
-        public BigDecimal time;
+	@JsonFormat(shape = JsonFormat.Shape.ARRAY)
+	@JsonPropertyOrder({"price", "volume", "time", "buySell", "marketLimit", "miscellaneous"})
+	public static class RecentTrade {
+		public BigDecimal price;
+		public BigDecimal volume;
+		public BigDecimal time;
 
-        public Object buySell;
-        public String marketLimit;
-        public String miscellaneous;
+		public Object buySell;
+		public String marketLimit;
+		public String miscellaneous;
 
-        @Override
-        public String toString() {
-            return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
-                    .append("price", price)
-                    .append("volume", volume)
-                    .append("time", time)
-                    .append("buySell", buySell)
-                    .append("marketLimit", marketLimit)
-                    .append("miscellaneous", miscellaneous)
-                    .toString();
-        }
-    }
+		@Override
+		public String toString() {
+			return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
+					.append("price", price)
+					.append("volume", volume)
+					.append("time", time)
+					.append("buySell", buySell)
+					.append("marketLimit", marketLimit)
+					.append("miscellaneous", miscellaneous)
+					.toString();
+		}
+	}
 }

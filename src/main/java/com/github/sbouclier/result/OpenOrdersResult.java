@@ -17,135 +17,135 @@ import java.util.Map;
  */
 public class OpenOrdersResult extends Result<OpenOrdersResult.OpenOrders> {
 
-    public static class OpenOrders {
+	public static class OpenOrders {
 
-        @JsonProperty("open")
-        public Map<String, OpenOrdersResult.OpenOrder> open;
+		@JsonProperty("open")
+		public Map<String, OpenOrdersResult.OpenOrder> open;
 
-        @Override
-        public String toString() {
-            return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
-                    .append("open", open)
-                    .toString();
-        }
-    }
+		@Override
+		public String toString() {
+			return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
+					.append("open", open)
+					.toString();
+		}
+	}
 
-    public static class OpenOrder {
+	public static class OpenOrder {
 
-        public enum Status {
-            PENDING("pending"),
-            OPEN("open"),
-            CLOSED("closed"),
-            CANCELED("canceled"),
-            EXPIRED("expired");
+		public enum Status {
+			PENDING("pending"),
+			OPEN("open"),
+			CLOSED("closed"),
+			CANCELED("canceled"),
+			EXPIRED("expired");
 
-            private String value;
+			private String value;
 
-            Status(String value) {
-                this.value = value;
-            }
+			Status(String value) {
+				this.value = value;
+			}
 
-            @JsonValue
-            public String getValue() {
-                return value;
-            }
-        }
+			@JsonValue
+			public String getValue() {
+				return value;
+			}
+		}
 
-        public static class Description {
+		public static class Description {
 
-            @JsonProperty("pair")
-            public String assetPair;
+			@JsonProperty("pair")
+			public String assetPair;
 
-            @JsonProperty("type")
-            public OrderDirection orderDirection;
+			@JsonProperty("type")
+			public OrderDirection orderDirection;
 
-            @JsonProperty("ordertype")
-            public OrderType orderType;
+			@JsonProperty("ordertype")
+			public OrderType orderType;
 
-            public BigDecimal price;
+			public BigDecimal price;
 
-            @JsonProperty("price2")
-            public BigDecimal secondaryPrice;
+			@JsonProperty("price2")
+			public BigDecimal secondaryPrice;
 
-            public String leverage;
+			public String leverage;
 
-            public String order;
+			public String order;
 
-            @Override
-            public String toString() {
-                return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
-                        .append("assetPair", assetPair)
-                        .append("orderDirection", orderDirection)
-                        .append("orderType", orderType)
-                        .append("price", price)
-                        .append("secondaryPrice", secondaryPrice)
-                        .append("leverage", leverage)
-                        .append("order", order)
-                        .toString();
-            }
-        }
+			@Override
+			public String toString() {
+				return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
+						.append("assetPair", assetPair)
+						.append("orderDirection", orderDirection)
+						.append("orderType", orderType)
+						.append("price", price)
+						.append("secondaryPrice", secondaryPrice)
+						.append("leverage", leverage)
+						.append("order", order)
+						.toString();
+			}
+		}
 
-        @JsonProperty("refid")
-        public String referralOrderTransactionId;
+		@JsonProperty("refid")
+		public String referralOrderTransactionId;
 
-        @JsonProperty("userref")
-        public String userReferenceId;
+		@JsonProperty("userref")
+		public String userReferenceId;
 
-        public Status status;
+		public Status status;
 
-        @JsonProperty("opentm")
-        public Long openTimestamp;
+		@JsonProperty("opentm")
+		public Long openTimestamp;
 
-        @JsonProperty("starttm")
-        public Long orderStartTimestamp;
+		@JsonProperty("starttm")
+		public Long orderStartTimestamp;
 
-        @JsonProperty("expiretm")
-        public Long orderEndTimestamp;
+		@JsonProperty("expiretm")
+		public Long orderEndTimestamp;
 
-        @JsonProperty("descr")
-        public Description description;
+		@JsonProperty("descr")
+		public Description description;
 
-        @JsonProperty("vol")
-        public BigDecimal volumeOrder;
+		@JsonProperty("vol")
+		public BigDecimal volumeOrder;
 
-        @JsonProperty("vol_exec")
-        public BigDecimal volumeExecuted;
+		@JsonProperty("vol_exec")
+		public BigDecimal volumeExecuted;
 
-        public BigDecimal cost;
+		public BigDecimal cost;
 
-        public BigDecimal fee;
+		public BigDecimal fee;
 
-        @JsonProperty("price")
-        public BigDecimal averagePrice;
+		@JsonProperty("price")
+		public BigDecimal averagePrice;
 
-        @JsonProperty("stopprice")
-        public BigDecimal stopPrice;
+		@JsonProperty("stopprice")
+		public BigDecimal stopPrice;
 
-        @JsonProperty("misc")
-        public String miscellaneous;
+		@JsonProperty("misc")
+		public String miscellaneous;
 
-        @JsonProperty("oflags")
-        public String orderFlags;
+		@JsonProperty("oflags")
+		public String orderFlags;
 
-        @Override
-        public String toString() {
-            return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
-                    .append("referralOrderTransactionId", referralOrderTransactionId)
-                    .append("userReferenceId", userReferenceId)
-                    .append("status", status)
-                    .append("openTimestamp", openTimestamp)
-                    .append("orderStartTimestamp", orderStartTimestamp)
-                    .append("orderEndTimestamp", orderEndTimestamp)
-                    .append("descr", description)
-                    .append("volumeOrder", volumeOrder)
-                    .append("volumeExecuted", volumeExecuted)
-                    .append("cost", cost)
-                    .append("fee", fee)
-                    .append("averagePrice", averagePrice)
-                    .append("stopPrice", stopPrice)
-                    .append("miscellaneous", miscellaneous)
-                    .append("orderFlags", orderFlags)
-                    .toString();
-        }
-    }
+		@Override
+		public String toString() {
+			return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
+					.append("referralOrderTransactionId", referralOrderTransactionId)
+					.append("userReferenceId", userReferenceId)
+					.append("status", status)
+					.append("openTimestamp", openTimestamp)
+					.append("orderStartTimestamp", orderStartTimestamp)
+					.append("orderEndTimestamp", orderEndTimestamp)
+					.append("descr", description)
+					.append("volumeOrder", volumeOrder)
+					.append("volumeExecuted", volumeExecuted)
+					.append("cost", cost)
+					.append("fee", fee)
+					.append("averagePrice", averagePrice)
+					.append("stopPrice", stopPrice)
+					.append("miscellaneous", miscellaneous)
+					.append("orderFlags", orderFlags)
+					.toString();
+		}
+	}
 }

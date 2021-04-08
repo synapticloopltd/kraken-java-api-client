@@ -13,6 +13,7 @@ import java.util.Map;
  * Result from getOrderBook
  *
  * @author Stéphane Bouclier
+ * @author synapticloop
  */
 public class OrderBookResult extends Result<Map<String, OrderBookResult.OrderBook>> {
 
@@ -35,8 +36,6 @@ public class OrderBookResult extends Result<Map<String, OrderBookResult.OrderBoo
         public BigDecimal price;
         public BigDecimal volume;
         public Integer timestamp;
-
-        private Market() {}
 
         public Market(BigDecimal price, BigDecimal volume, Integer timestamp) {
             this.price = price;

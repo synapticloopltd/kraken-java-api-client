@@ -12,17 +12,17 @@ import java.math.BigDecimal;
  */
 public class TradeVolumeResult extends Result<TradeVolumeResult.TradeVolume> {
 
-    public static class TradeVolume {
+	public static class TradeVolume {
 
-        public String currency;
-        public BigDecimal volume;
+		public String currency;
+		public BigDecimal volume;
 
-        @Override
-        public String toString() {
-            return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
-                    .append("currency", currency)
-                    .append("volume", volume)
-                    .toString();
-        }
-    }
+		@Override
+		public String toString() {
+			return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
+					.append("currency", currency)
+					.append("volume", volume)
+					.toString();
+		}
+	}
 }

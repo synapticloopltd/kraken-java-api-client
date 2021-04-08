@@ -14,19 +14,19 @@ import java.util.Map;
  */
 public class LedgersInformationResult extends Result<LedgersInformationResult.LedgersInformation> {
 
-    public static class LedgersInformation {
+	public static class LedgersInformation {
 
-        @JsonProperty("ledger")
-        public Map<String, LedgerInformation> ledger;
+		@JsonProperty("ledger")
+		public Map<String, LedgerInformation> ledger;
 
-        public Long count;
+		public Long count;
 
-        @Override
-        public String toString() {
-            return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
-                    .append("ledger", ledger)
-                    .append("count", count)
-                    .toString();
-        }
-    }
+		@Override
+		public String toString() {
+			return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
+					.append("ledger", ledger)
+					.append("count", count)
+					.toString();
+		}
+	}
 }

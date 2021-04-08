@@ -16,74 +16,74 @@ import java.util.Map;
  */
 public class TradesHistoryResult extends Result<TradesHistoryResult.TradesHistory> {
 
-    public static class TradesHistory {
+	public static class TradesHistory {
 
-        @JsonProperty("trades")
-        public Map<String, TradeHistory> trades;
+		@JsonProperty("trades")
+		public Map<String, TradeHistory> trades;
 
-        public Long count;
+		public Long count;
 
-        @Override
-        public String toString() {
-            return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
-                    .append("trades", trades)
-                    .append("count", count)
-                    .toString();
-        }
-    }
+		@Override
+		public String toString() {
+			return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
+					.append("trades", trades)
+					.append("count", count)
+					.toString();
+		}
+	}
 
-    public static class TradeHistory {
+	public static class TradeHistory {
 
-        @JsonProperty("ordertxid")
-        public String orderTransactionId;
+		@JsonProperty("ordertxid")
+		public String orderTransactionId;
 
-        @JsonProperty("postxid")
-        public String postxId;
+		@JsonProperty("postxid")
+		public String postxId;
 
-        @JsonProperty("pair")
-        public String assetPair;
+		@JsonProperty("pair")
+		public String assetPair;
 
-        @JsonProperty("time")
-        public String tradeTimestamp;
+		@JsonProperty("time")
+		public String tradeTimestamp;
 
-        @JsonProperty("type")
-        public OrderDirection orderDirection;
+		@JsonProperty("type")
+		public OrderDirection orderDirection;
 
-        @JsonProperty("ordertype")
-        public OrderType orderType;
+		@JsonProperty("ordertype")
+		public OrderType orderType;
 
-        public BigDecimal price;
+		public BigDecimal price;
 
-        public BigDecimal cost;
+		public BigDecimal cost;
 
-        public BigDecimal fee;
+		public BigDecimal fee;
 
-        @JsonProperty("vol")
-        public BigDecimal volume;
+		@JsonProperty("vol")
+		public BigDecimal volume;
 
-        public BigDecimal margin;
+		public BigDecimal margin;
 
-        @JsonProperty("misc")
-        public String miscellaneous;
+		@JsonProperty("misc")
+		public String miscellaneous;
 
-        public String tradeId;
+		public String tradeId;
 
-        @Override
-        public String toString() {
-            return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
-                    .append("orderTransactionId", orderTransactionId)
-                    .append("postxId", postxId)
-                    .append("assetPair", assetPair)
-                    .append("tradeTimestamp", tradeTimestamp)
-                    .append("orderDirection", orderDirection)
-                    .append("orderType", orderType)
-                    .append("price", price)
-                    .append("cost", cost)
-                    .append("fee", fee)
-                    .append("volume", volume)
-                    .append("margin", margin)
-                    .append("miscellaneous", miscellaneous)
-                    .toString();
-        }
-    }
+		@Override
+		public String toString() {
+			return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
+					.append("orderTransactionId", orderTransactionId)
+					.append("postxId", postxId)
+					.append("assetPair", assetPair)
+					.append("tradeTimestamp", tradeTimestamp)
+					.append("orderDirection", orderDirection)
+					.append("orderType", orderType)
+					.append("price", price)
+					.append("cost", cost)
+					.append("fee", fee)
+					.append("volume", volume)
+					.append("margin", margin)
+					.append("miscellaneous", miscellaneous)
+					.toString();
+		}
+	}
 }

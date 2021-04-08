@@ -13,45 +13,45 @@ import java.math.BigDecimal;
  */
 public class TradeBalanceResult extends Result<TradeBalanceResult> {
 
-    @JsonProperty("eb")
-    public BigDecimal equivalentBalance;
+	@JsonProperty("eb")
+	public BigDecimal equivalentBalance;
 
-    @JsonProperty("tb")
-    public BigDecimal tradeBalance;
+	@JsonProperty("tb")
+	public BigDecimal tradeBalance;
 
-    @JsonProperty("m")
-    public BigDecimal marginAmount;
+	@JsonProperty("m")
+	public BigDecimal marginAmount;
 
-    @JsonProperty("n")
-    public BigDecimal unrealizedNetProfitLoss;
+	@JsonProperty("n")
+	public BigDecimal unrealizedNetProfitLoss;
 
-    @JsonProperty("c")
-    public BigDecimal costBasis;
+	@JsonProperty("c")
+	public BigDecimal costBasis;
 
-    @JsonProperty("v")
-    public BigDecimal floatingValuation;
+	@JsonProperty("v")
+	public BigDecimal floatingValuation;
 
-    @JsonProperty("e")
-    public BigDecimal equity;
+	@JsonProperty("e")
+	public BigDecimal equity;
 
-    @JsonProperty("mf")
-    public BigDecimal freeMargin;
+	@JsonProperty("mf")
+	public BigDecimal freeMargin;
 
-    @JsonProperty("ml")
-    public BigDecimal marginLevel;
+	@JsonProperty("ml")
+	public BigDecimal marginLevel;
 
-    @Override
-    public String toString() {
-        return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
-                .append("equivalentBalance", equivalentBalance)
-                .append("tradeBalance", tradeBalance)
-                .append("marginAmount", marginAmount)
-                .append("unrealizedNetProfitLoss", unrealizedNetProfitLoss)
-                .append("costBasis", costBasis)
-                .append("floatingValuation", floatingValuation)
-                .append("equity", equity)
-                .append("freeMargin", freeMargin)
-                .append("marginLevel", marginLevel)
-                .toString();
-    }
+	@Override
+	public String toString() {
+		return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
+				.append("equivalentBalance", equivalentBalance)
+				.append("tradeBalance", tradeBalance)
+				.append("marginAmount", marginAmount)
+				.append("unrealizedNetProfitLoss", unrealizedNetProfitLoss)
+				.append("costBasis", costBasis)
+				.append("floatingValuation", floatingValuation)
+				.append("equity", equity)
+				.append("freeMargin", freeMargin)
+				.append("marginLevel", marginLevel)
+				.toString();
+	}
 }
